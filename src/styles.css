@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html, body{
+    margin: 10px;
+    background-color: var(--surface-b);
+    font-family: var(--font-family);
+    
+}
+
+
+   table {
+    width: 100%;
+    border: 1px solid #000;
+   }
+   th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-spacing: 0;
+    padding: 0.3em;
+    
+   }
+   th {
+    background: var(--cyan-500)
+   }
+
+
+.text-layout{
+    color: var(--text-color);
+
+}

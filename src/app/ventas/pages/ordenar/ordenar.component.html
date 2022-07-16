@@ -1,0 +1,42 @@
+<div class="text-layout">
+    <h1>Pipes Personalizados</h1>
+    <p>Pipes creados por {{'nosotros' | mayusculas:enMayusculas}}</p>
+
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left"></div>
+        <button pButton type="button" label="Toggle Mayúsculas" (click)="cambiar()" icon="pi pi-caret-up" iconPos="right" class="p-button-info p-button-raised p-button-rounded"></button>
+    <div class="p-toolbar-group-right">
+        
+
+        <button pButton type="button" label="Por Nombre" icon="pi pi-sort" class="p-button-warning p-button-raised p-button-rounded mr-1" (click)="cambiarOrden('nombre')"></button>
+
+        <button pButton label="Vuela" icon="pi pi-sort" class="p-button-help p-button-raised p-button-rounded mr-1" (click)="cambiarOrden('vuela')"></button>
+
+        <button pButton label="Por Color" icon="pi pi-sort" class="p-button-danger p-button-raised p-button-rounded mr-1" (click)="cambiarOrden('color')"></button>
+        
+    </div>
+</p-toolbar>
+
+<div class="table-responsive-lg">
+    <div class="col">
+        <table class="table text-layout">
+            <thead>
+                <tr>
+                    <th class="col">Nombre</th>
+                    <th class="col">¿Vuela?</th>
+                    <th class="col">Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let heroes of heroes | ordenar:ordenarPor">
+                    <td class="row">{{heroes.nombre}}</td>
+                    <td class="row">{{heroes.vuela | vuela | titlecase}}</td>
+                    <td class="row">{{heroes.color}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>        
